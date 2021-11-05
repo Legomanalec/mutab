@@ -107,5 +107,8 @@ for w in str_predictions[0]:
         print ('\t'),
 
 
-mid.save('new_song.mid')
+mid.save('../../new_song.mid')
+
+#python ctc_predict.py -image ../../mutabdata/Data/Example/000051652-1_2_1.png -model ../../mutabdata/Semantic-Model/semantic_model.meta -vocabulary Data/vocabulary_semantic.txt
+
 

@@ -5,7 +5,7 @@ import tensorflow as tf
 #pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.0-py3-none-any.whl
 
 #read in midi
-mid = MidiFile('tf-end-to-end/new_song.mid', clip=True)
+mid = MidiFile('TAKEFIVE.mid', clip=True)
 print(mid)
 
 
@@ -17,7 +17,7 @@ for x in range(22):
 
 #extract notes from midi into numpy array
 arr = np.array([])
-for msg in mid.tracks[0][:400]:
+for msg in mid.tracks[0][:50]:
     if msg.type == 'note_on':
         arr = np.append(arr, msg.note)
 print(arr)
