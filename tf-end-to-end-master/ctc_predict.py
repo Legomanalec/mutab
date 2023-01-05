@@ -1,5 +1,5 @@
 import argparse
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import ctc_utils
 import cv2
 import numpy as np
