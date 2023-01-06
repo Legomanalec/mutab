@@ -25,3 +25,35 @@ and each value is a note(s) being played.
 
 [(E, A, D2, G, B, e1), (E, A, D, G, B2, e3),...,(E0, A2, D2, G1, B0, e1)]
 [(52, 65, 0, 0, 0, 0), (61, 66, 0, 0, 0, 0),...,(40, 47, 52, 56, 59, 65)]
+
+
+
+UPDATE 1/6/2023
+This is more of a timeseries problem. It would make sense to divide each note into an equally spaced time interval and predict based on the notes context. I am not familar with timeseries learning
+so I will need to do some reading, but the idea appears pretty simple. I believe the ideal dataset would look like so:
+
+|Time|Tab                     |Midi                    |
+|----|------------------------|------------------------|
+|0001|(E, A, D2, G, B, e1)    |(52, 65, 0, 0, 0, 0)    |
+|0002|(E, A, D, G, B2, e3)    |(61, 66, 0, 0, 0, 0)    |
+|... |...                     |...                     |
+|0168|(E0, A2, D2, G1, B0, e1)|(40, 47, 52, 56, 59, 65)|
+
+It might also make sense to make a dataset like:
+|Time|TabE|TabA|TabD|TabG|TabB|Tabe|Midi0|Midi1|Midi2|Midi3|Midi4|Midi5|
+|----|----|----|----|----|----|----|-----|-----|-----|-----|-----|-----|
+|0001|-1  |-1  |2   |-1  |-1  |1   |52   |65   |0    |0    |0    |0    |
+|0002|-1  |-1  |-1  |-1  |2   |3   |61   |66   |0    |0    |0    |0    |
+|... |... |... |... |... |... |... |...  |...  |...  |...  |...  |...  |
+|0168|0   |2   |2   |1   |0   |1   |40   |47   |52   |56   |59   |65   |
+
+This would probably be easier to work with but would require multi-prediction as we would be predicting all 6 Tab columns at a time. 
+
+
+Take the first row for example:
+|Time|TabE|TabA|TabD|TabG|TabB|Tabe|Midi0|Midi1|Midi2|Midi3|Midi4|Midi5|
+|----|----|----|----|----|----|----|-----|-----|-----|-----|-----|-----|
+|0001|-1  |-1  |2   |-1  |-1  |1   |52   |65   |0    |0    |0    |0    |
+
+I want to give the machine the inputs (52, 65, 0, 0, 0, 0) which correspond to an E3 and an F4 being played at the same time. The model will then think "Oh, when an E3 and F4 are being played at the same time, 
+based on all the samples I have seen, it would make most sense to write the tab as D2/e1"
