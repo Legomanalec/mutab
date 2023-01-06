@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import staleness_of
-
+import selenium.common.exceptions as ex
 
 from TabToMidi import *
 import time
@@ -21,10 +21,14 @@ for i in range(100): #There are only 100 pages of tabs
         url_list.append((tab.get_attribute("href"), tab.text))      
     for url in url_list:
         driver.get(url[0])
-        tab_text = driver.find_element("xpath", "//*[contains(@class, 'tK8GG Ph1Np')]")
-        midiToTab(tab_text.text, url[1], data_id)
-        data_id+=1
-        print("Added: " + url[1])
+        try:
+            tab_text = driver.find_element("xpath", "//*[contains(@class, 'tK8GG Ph1Np')]")
+            midiToTab(tab_text.text, url[1], data_id)
+            data_id+=1
+            print("Added: " + url[1])
+        except:
+            print("Probably taken down by copyright")
+        
 
 
 
