@@ -19,12 +19,12 @@ for i in range(100): #There are only 100 pages of tabs
     url_list = []
     for tab in driver.find_elements("xpath", "//*[contains(@class, 'lIKMM g7KZB')]//*[contains(@class, 'aPPf7 HT3w5 lBssT')]"):
         url_list.append((tab.get_attribute("href"), tab.text))      
-    print(url_list)
     for url in url_list:
         driver.get(url[0])
-        tab_text = driver.find_element("xpath", "/html/body/div[1]/div[2]/main/div[2]/article[1]/section[2]/article/section[1]/div/section/code/pre")
+        tab_text = driver.find_element("xpath", "//*[contains(@class, 'tK8GG Ph1Np')]")
         midiToTab(tab_text.text, url[1], data_id)
         data_id+=1
+        print("Added: " + url[1])
 
 
 
