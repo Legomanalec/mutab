@@ -57,3 +57,7 @@ Take the first row for example:
 
 I want to give the machine the inputs (52, 65, 0, 0, 0, 0) which correspond to an E3 and an F4 being played at the same time. The model will then think "Oh, when an E3 and F4 are being played at the same time, 
 based on all the samples I have seen, it would make most sense to write the tab as D2/e1"
+
+UPDATE: 1/7/2023
+It wouldnt make much sense to structure the databse like mentioned previously because we have anywhere from 20 to 20000 samples per song so we would need a new database for each tab. Could look at encoding each measure
+between tab and midi or 2 measure. 
