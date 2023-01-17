@@ -1,7 +1,18 @@
-<h1>Overview</h1>
+<h1>1 Overview</h1>
 The goal of this project is to allow a mobile app user the ability to take a picture of an excerpt of musican notation and recieve the corresponding guitar tablature 
 
-<h1>Brainstorming</h1>
+<h1>2 Background</h1>
+<h2>2.1 Sheet Music</h2>
+
+<h2>2.2 Optical Music Recognition</h2>
+
+<h2>2.1 Guitar Tablature</h2>
+
+<h1>3 Sheet Music to Guitar Tablature</h1>
+<h2>3.1 Web Scraping</h2>
+
+
+<h1>X Brainstorming</h1>
 My plan:
     1. Create a web scraper to grab thousands of guitar tablatures from Ultimate Guitar Tabs
     2. Convert each of these tablatures to midi 
