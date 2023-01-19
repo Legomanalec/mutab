@@ -5,10 +5,32 @@ The goal of this project is to allow a mobile app user the ability to take a pic
 <h2>2.1 Sheet Music</h2>
 
 <h2>2.2 Optical Music Recognition</h2>
-
+Optical Music Recognition or OMR is a machine learning journey that many researchers have taken on. The goal of this research is to have a machine learning model take an image of sheet music as an input and receieve an encoding of the music as an output. 
 <h2>2.1 Guitar Tablature</h2>
+Guitar tablature is the most common notation used for guitar music. The was guitar tablature works is by mapping out the neck of the guitar with all 6 strings like so:
+
+e-----|\
+B-----|\
+G-----|\
+D-----|\
+A-----|\
+E-----|
+
+To represent a note in this notation you simply add the fret number to the desired string like so:
+
+e-5---|\
+B-----|\
+G-----|\
+D-----|\
+A-----|\
+E-----|
+
+This would mean you are playing an A note as that is that is the note on the 5th fret of the e string. 
 
 <h1>3 Sheet Music to Guitar Tablature</h1>
+The ultimate goal of this project is to reliably convert sheet music to guitar tablature using a machine learning model. The reason this problem requires machine learning is because to convert sheet music to guitar tablature is a one-to-many mapping with only a few select viable mappings. When humans translate sheet music to guitar tablature, their own intuition is used to determine if a mapping is viable. 
+
+Guitar tablature to sheet music is a trivial problem to solve. every note on the guitar corresponds to a single note in sheet music notation. However, every note in sheet music notion corresponds to multiple notes in guitar tablature. Using machine learning, the model will be able to determine which one-to-many mapping is closest to how a guitarist would map it using their own intuition.
 <h2>3.1 Web Scraping</h2>
 
 
