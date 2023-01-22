@@ -101,3 +101,8 @@ based on all the samples I have seen, it would make most sense to write the tab 
 UPDATE: 1/7/2023
 It wouldnt make much sense to structure the databse like mentioned previously because we have anywhere from 20 to 20000 samples per song so we would need a new database for each tab. Could look at encoding each measure
 between tab and midi or 2 measure. 
+
+UPDATE 1/21/2023
+I was getting way too ahead of myself by trying to plan out the data format for training when I had no idea how I was going to train anything...
+
+After doing more research, I believe this is an RNN problem, similar to predictive text. Instead of predicting the rest of a word based on its first character, I will be predicting the next tablature note based on the current one. There are only a max of 6 possible locations a note can be on the neck so there are at most 6 options to choose from next as the note needed will be known.
