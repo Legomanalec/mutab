@@ -106,3 +106,10 @@ UPDATE 1/21/2023
 I was getting way too ahead of myself by trying to plan out the data format for training when I had no idea how I was going to train anything...
 
 After doing more research, I believe this is an RNN problem, similar to predictive text. Instead of predicting the rest of a word based on its first character, I will be predicting the next tablature note based on the current one. There are only a max of 6 possible locations a note can be on the neck so there are at most 6 options to choose from next as the note needed will be known.
+
+
+The nn_testing.ipynb is an example of speech generation trained on shakespeare. It works by typing a character and going one character at a time by selecting the logit with highest log-likelihood. This model currently scans through all 65 unique characters used in the text, but I only need it to scan through the possible tablature options. There are two potential solutions:
+
+1. find a way to dynamically alter the predictive tab locations for each the next note location in the midi file created
+
+2. Just accept all of the logits provided and selected the one with the highest likelihood that matched the input note. 

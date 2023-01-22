@@ -6,6 +6,7 @@ from selenium.webdriver.support.expected_conditions import staleness_of
 import selenium.common.exceptions as ex
 
 from TabToMidi import *
+from EncodeTab import *
 import time
 
 driver = webdriver.Chrome('Tools/chromedriver')
@@ -23,7 +24,8 @@ for i in range(100): #There are only 100 pages of tabs
         driver.get(url[0])
         try:
             tab_text = driver.find_element("xpath", "//*[contains(@class, 'tK8GG Ph1Np')]")
-            midiToTab(tab_text.text, url[1], data_id)
+            # midiToTab(tab_text.text, url[1], data_id)
+            encodeTab(tab_text.text, url[1], data_id)
             data_id+=1
             print("Added: " + url[1])
         except:
