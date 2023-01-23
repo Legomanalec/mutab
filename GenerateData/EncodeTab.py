@@ -17,8 +17,8 @@ def encodeTab(tab, name, data_name):
 
 
     string_midi_offset = [64, 59, 55, 50, 45, 40]
-
-    encoded_tab_array = []
+        
+    encoded_tab_string = ""
     midi_array = []
     for i in range(len(min(tab_array, key=len))):
         for j in range(0, 6):
@@ -36,11 +36,15 @@ def encodeTab(tab, name, data_name):
                     note = int(tab_array[j][i])
                     encoded = string_array[j] + str(note)
                     midi = string_midi_offset[j]+note
-               
-                encoded_tab_array.append(encoded)
+
+                encoded_tab_string += encoded + " "
                 midi_array.append(midi)
-    print(len(encoded_tab_array))
-    print(len(midi_array))
+
+    with open("data/full_tab_string.txt", 'a', encoding="utf-8") as outf:
+        outf.write(str(encoded_tab_string))
+
+
+   
 
 #NEED TO MAKE THE INPUT TO THE RNN AN ARRAY NOT A STRING GOING ONE INDEX AT A TIME
     
