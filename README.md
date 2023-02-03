@@ -113,3 +113,26 @@ The nn_testing.ipynb is an example of speech generation trained on shakespeare. 
 1. find a way to dynamically alter the predictive tab locations for each the next note location in the midi file created
 
 2. Just accept all of the logits provided and selected the one with the highest likelihood that matched the input note. 
+
+UPDATE 2/3/2023:
+
+Take this musical excerpt:
+
+![The Lickt](https://b.thumbs.redditmedia.com/w1V7Zqnl2mmeuzw-1S6VaTAlGHlB5BQX1vf57279wpA.png)
+
+The Musical column in this table represents the 7 (transposed) notes from the excerpt above, in order.
+
+| Musical | Midi | Tablature Options       | Pred 1 | Pred 2 | Pred 3 | Pred 4 |
+|---------|------|-------------------------|--------|--------|--------|--------|
+| A3      | 57   | [G2, D7, A12, E17]      | D7     | A12    | G2     | E17    |
+| B3      | 59   | [B0, G4, D9, A14, E19]  | G4     | D9     | B0     | A14    |
+| C4      | 60   | [B1, G5, D10, A15, E20] | G5     | D10    | B1     | A15    |
+| D4      | 62   | [B3, G7, D12, A17, E22] | G7     | D12    | B3     | A17    |
+| B3      | 59   | [B0, G4, D9, A14, E19]  | G4     | D9     | B0     | A14    |
+| G3      | 55   | [G0, D5, A10, E15]      | D5     | A10    | G0     | E15    |
+| A3      | 57   | [G2, D7, A12, E17]      | D7     | A12    | G2     | E17    |
+
+The next 2 columns are conversions to other notations.
+
+The four prediction columns are feasible tablature options
+
