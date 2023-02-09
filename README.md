@@ -33,7 +33,11 @@ The ultimate goal of this project is to reliably convert sheet music to guitar t
 Guitar tablature to sheet music is a trivial problem to solve. every note on the guitar corresponds to a single note in sheet music notation. However, every note in sheet music notion corresponds to multiple notes in guitar tablature. Using machine learning, the model will be able to determine which one-to-many mapping is closest to how a guitarist would map it using their own intuition.
 <h2>3.1 Web Scraping</h2>
 
-<h2>4 Resources</h2>
+
+<h1>4 How It Works</h1>
+Using a recurrent neural network we are able to solve this problem. The network trains on over 500,000 tablature notes in sequence in a textfile. The resulting output is very similar to a text generation model except the output text is contrained to a possible tablature position. This happens by running the model along side the musical note array to sort of guide it in its prediction. For example, if we have a midi note marked as 57 the corresponding tablature notes will be: [G2, D7, A12, E17] the networks job is to determine, based on the previous notes played, which of these tablature options makes the most sense. 
+
+<h2>5 Resources</h2>
 
 LSTM RNN in Keras: Examples of One-to-Many, Many-to-One & Many-to-Many: https://wandb.ai/ayush-thakur/dl-question-bank/reports/LSTM-RNN-in-Keras-Examples-of-One-to-Many-Many-to-One-Many-to-Many---VmlldzoyMDIzOTM#what-are-many-to-one-sequence-problems?
  
