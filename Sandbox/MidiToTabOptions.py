@@ -30,5 +30,3 @@ def convert_array_to_tab(tab_array):
         tab_string += '\n'
     return tab_string
 
-
-print(convert_array_to_tab(['D7', 'G3', 'D10', 'B2', 'G8', 'G5', 'G1', 'G3']))
