@@ -1,6 +1,9 @@
 <h1>1 Overview</h1>
 The goal of this project is to allow a mobile app user the ability to take a picture of an excerpt of musican notation and recieve the corresponding guitar tablature 
 
+<h2>1.1 Scope</h2>
+The scope of this project is to take in music data from a format such as midi or music xml and return a guitar tablature representation. 
+
 <h1>2 Background</h1>
 <h2>2.1 Sheet Music</h2>
 
