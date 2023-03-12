@@ -13,7 +13,7 @@ def encodeTab(tab, name, data_name):
         fullline = ''
         for matchNum, match in enumerate(tab_reg, start=1):
             fullline = fullline + match.group()
-        tab_array.append(fullline)
+        tab_array.append(cxfullline)
 
 
     string_midi_offset = [64, 59, 55, 50, 45, 40]
@@ -48,4 +48,3 @@ def encodeTab(tab, name, data_name):
 
 #NEED TO MAKE THE INPUT TO THE RNN AN ARRAY NOT A STRING GOING ONE INDEX AT A TIME
     
-

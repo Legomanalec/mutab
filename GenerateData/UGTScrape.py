@@ -13,7 +13,7 @@ driver = webdriver.Chrome('Tools/chromedriver')
 
 
 data_id = 0
-for i in range(20, 100): #There are only 100 pages of tabs
+for i in range(40, 100): #There are only 100 pages of tabs
     url = "https://www.ultimate-guitar.com/explore?order=hitstotal_desc&page="+str(i)+"&type[]=Tabs"
     driver.get(url)
 
