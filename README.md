@@ -143,3 +143,5 @@ The next 2 columns are conversions to other notations.
 
 The four prediction columns are feasible tablature options
 
+Note:
+There was an issue where some tabs would have numbers right next to each other which would generate notes such as A33 or B55 when in reality it should have been A3 A3 and B5 B5 so I replaced all of these occurrences with just a single number so A33 would become A3. The repeated notes didn't seem to serve much of a purpose when determining the best position between notes.
